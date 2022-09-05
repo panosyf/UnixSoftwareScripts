@@ -1,0 +1,37 @@
+#!/usr/bin/bash
+
+echo "Hello"
+echo "Welcome to Discriminant finder for a*x^2+b*x+c"
+
+answ="Yes"
+count=0
+
+while [ $answ != "No" ]
+do
+    read -p "Give integer 'a': " a
+    read -p "Give integer 'b': " b
+    read -p "Give integer 'c': " c
+
+    clear
+
+    echo "Results for $a*x^2+$b*x+$c"
+    let D=$b**2-4*$a*$c
+
+    if [ $D -gt 0 ]
+    then
+        echo "The equation has two distinct real roots"
+        let count+=1
+    elif [ $D -eq 0 ]
+    then
+        echo "The equation has one real root"
+    else
+        echo "The equation has two imaginary roots"
+    fi
+
+    read -p "Would you like another(Yes/No): " answ
+    clear
+done
+
+clear
+
+echo -p "Total equations with two distinct real roots: $count"

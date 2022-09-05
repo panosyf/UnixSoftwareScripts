@@ -1,0 +1,26 @@
+#!/usr/bin/bash
+
+echo "Hello"
+read -p "Enter file name: " file
+read -p "Enter a string: " word
+
+clear
+
+echo "Lines which start with '$word'"
+grep -n -i "^$word" $file
+echo -p "Total lines which start with '$word':"
+grep -c -i "^$word" $file
+
+echo
+
+echo "Lines containing '$word'"
+grep -n -i "$word" $file
+echo -p "Total lines containing '$word':"
+grep -c -i "$word" $file
+
+echo
+
+echo "Lines ending with '$word'"
+grep -n -i "$word$" $file
+echo -p "Total lines which which end with '$word':"
+grep -c -i "$word$" $file

@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+
+echo "Hello"
+read -p "Please enter your number: " num
+
+if [ $num -gt 0 -a $num -le 14 ]
+then
+    echo "Valid number"
+else
+    echo "Invalid input, Termination"
+fi
